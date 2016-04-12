@@ -19,7 +19,19 @@
     </section>
 
     <section class="main-content">
-      <p>test</p>
+      <div class="wrap">
+      	<input type="file" id="upload-file" multiple /><br/>
+      	<div id="image-preview"></div>
+      </div>
+
+      <script src="jquery-2.2.2.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="jquery.imagereader.min.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+      	$('#upload-file').imageReader();
+      });
+      </script>
+
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/indosystem/jquery-image-reader">Jquery-image-reader</a> is maintained by <a href="https://github.com/indosystem">indosystem</a>.</span>
@@ -29,6 +41,6 @@
 
     </section>
 
-  
+
   </body>
 </html>
