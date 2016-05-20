@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>jQuery Image Reader by indosystem</title>
+    <title>jQuery Image Reader by Ipan Ardian</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
@@ -26,15 +26,20 @@
       </div>
 
       <script src="jquery-2.2.2.min.js" type="text/javascript" charset="utf-8"></script>
-      <script src="jquery.imagereader.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="jquery.imagereader-1.0.0.min.js" type="text/javascript" charset="utf-8"></script>
       <script type="text/javascript">
       $(document).ready(function(){
         $('#upload-file').imageReader({
+          renderType: 'canvas',
           onload: function(img) {
-            console.log({
-              width: img.width,
-              height: img.height
-            });
+            var ctx = img.getContext('2d');
+            var maxWidth = img.width - 10;
+            ctx.font = "20px Verdana";
+            ctx.fillStyle = "blue";
+            ctx.fillText("jQuery Image Reader", 10, 30, maxWidth);
+            ctx.font = "12px Verdana";
+            ctx.fillText("Filename : "+ this.name, 10, 60, maxWidth);
+            ctx.fillText("Dimension : "+ img.width +' x '+ img.height +' px', 10, 80, maxWidth);
             $(img).css('margin-top', '20px');
           }
         });
