@@ -40,10 +40,10 @@ $('#upload-file').imageReader({
 // Canvas
 $('#upload-file').imageReader({
   renderType: 'canvas',
-  onload: function(img) {
+  onload: function(canvas) {
 		// do some cool things with canvas
 		// fill text or pixel manipulation
-		var ctx = img.getContext('2d');
+		var ctx = canvas.getContext('2d');
 	    ctx.font = "20px Verdana";
 	    ctx.fillStyle = "blue";
 	    ctx.fillText("jQuery Image Reader", 10, 30);
